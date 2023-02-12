@@ -15,12 +15,16 @@ class BuildCombination {
                 {"1", "car", "chassis", "mfg"},
                 {"1", "car", "tyre", "mfg"},
                 {"2", "chassis", "door", "mfg"},
-                {"2", "chasis", "trunk", "proc"},
-                {"2", "chasis", "bonut", "proc"},
+                {"2", "chassis", "trunk", "proc"},
+                {"2", "chassis", "bonut", "proc"},
                 {"3", "door", "window", "mfg"},
                 {"3", "door", "handle", "proc"},
                 {"4", "window", "glass", "proc"},
                 {"5", "tyre", "rubber", "proc"},
+                {"1", "car", "engine", "mfg"},
+                {"6", "engine", "nut", "mfg"},
+                {"7", "nut", "bolt", "proc"},
+
         };
 
         for (String[] row : input) {
