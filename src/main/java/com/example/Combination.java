@@ -39,25 +39,26 @@ class BuildCombination {
 
         List<String> path = new ArrayList<>();
         mappingTheParentNode("car", path, input);
-        createHeaders(input);
+        createHeaders(map);
         System.out.println();
         printLevels();
     }
 
-    private static void createHeaders(String[][] input) {
+    private static void createHeaders(Map<String, List<String>> map) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Combination number");
         int maxValue = 0;
-        for (String[] array : input) {
-            int value = Integer.parseInt(array[0]);
+        for (List<String> array : map.values()) {
+            int value = array.size();
             if (value > maxValue) {
                 maxValue = value;
             }
         }
+        maxValue=maxValue+1;
         for (int i = 1; i <= maxValue; i++) {
             stringBuilder.append("level").append(i).append(" ").append("level").append(i).append(" id").append("  ");
         }
-        System.out.println(stringBuilder);
+        System.out.print(stringBuilder);
     }
 
     private static void mappingTheParentNode(String node, List<String> path, String[][] input) {
