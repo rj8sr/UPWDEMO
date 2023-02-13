@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf98ccbd-7990-409a-bcec-d5d84bbbbbe5" name="Changes" comment="remote">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/Formatting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/run/Formatting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/Formatting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       <recent name="D:\Intellij_demo_poject\Demo\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.example.BuildCombination">
+  <component name="RunManager" selected="Application.Formatting">
     <configuration name="ExampleRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.run.ExampleRun" />
       <module name="Demo" />
@@ -131,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.example.BuildCombination" />
         <item itemvalue="Application.Formatting" />
+        <item itemvalue="Application.com.example.BuildCombination" />
         <item itemvalue="Application.ExampleRun" />
         <item itemvalue="Application.com.demo.run.Main" />
         <item itemvalue="Application.Main" />
@@ -204,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676305117925</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="remote">
+      <created>1676307930638</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676307930638</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -24,12 +24,15 @@ public class Formatting {
             }
         }
 
-        System.out.println("level1\tlevel1 id\tlevel2\tlevel2 id\tlevel3\tlevel3 id\tlevel4\tlevel4 id");
+        System.out.println("Combination number\tlevel1\tlevel1 id\tlevel2\tlevel2 id\tlevel3\tlevel3 id\tlevel4\tlevel4 id");
+        int count = 1;
         for (String[] arr : input) {
+            System.out.print(count + "\t");
+            count++;
             for (int i = 0; i < arr.length; i += 2) {
                 int index = i / 2 + 1;
                 System.out.print(arr[i]);
-                for (int j = 0; j < maxLengths.get(index) - arr[i].length() + 1; j++) {
+                for (int j = 0; j < maxLengths.get(index) - arr[i].length(); j++) {
                     System.out.print(" ");
                 }
                 System.out.print("\t");

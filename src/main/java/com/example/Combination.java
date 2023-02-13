@@ -45,6 +45,8 @@ class BuildCombination {
     }
 
     private static void createHeaders(String[][] input) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Combination number");
         int maxValue = 0;
         for (String[] array : input) {
             int value = Integer.parseInt(array[0]);
@@ -53,8 +55,9 @@ class BuildCombination {
             }
         }
         for (int i = 1; i <= maxValue; i++) {
-            System.out.print("level" + i + " " + "level" + i + " id" + "  ");
+            stringBuilder.append("level").append(i).append(" ").append("level").append(i).append(" id").append("  ");
         }
+        System.out.println(stringBuilder);
     }
 
     private static void mappingTheParentNode(String node, List<String> path, String[][] input) {
@@ -94,11 +97,14 @@ class BuildCombination {
                 maxLengths.put(index, Math.max(maxLengths.getOrDefault(index, 0), arr.get(i).length()));
             }
         }
+        int count = 1;
         for (List<String> arr : addEx) {
+            System.out.print(count + "\t");
+            count++;
             for (int i = 0; i < arr.size(); i += 2) {
                 int index = i / 2 + 1;
                 System.out.print(arr.get(i));
-                for (int j = 0; j < maxLengths.get(index) - arr.get(i).length() + 1; j++) {
+                for (int j = 0; j < maxLengths.get(index) - arr.get(i).length(); j++) {
                     System.out.print(" ");
                 }
                 System.out.print("\t");
