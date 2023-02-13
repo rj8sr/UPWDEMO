@@ -6,8 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.lang.System.out;
-
 class BuildCombination {
     static Map<String, List<String>> map = new HashMap<>();
     static List<String[]> result = new ArrayList<>();
@@ -23,11 +21,7 @@ class BuildCombination {
                 {"3", "door", "window", "mfg"},
                 {"3", "door", "handle", "proc"},
                 {"4", "window", "glass", "proc"},
-                {"5", "tyre", "rubber", "proc"},
-                {"1", "car", "engine", "mfg"},
-                {"6", "engine", "nut", "mfg"},
-                {"7", "nut", "bolt", "mfg"},
-                {"8", "bolt", "bolts", "proc"}
+                {"5", "tyre", "rubber", "proc"}
 
         };
 
@@ -42,14 +36,29 @@ class BuildCombination {
 
         List<String> path = new ArrayList<>();
         mappingTheParentNode("car", path, input);
-        out.println(addEx);
+        createHeaders(input);
+        System.out.println();
+        printLevels(addEx, 0, 1);
+    }
+
+    private static void createHeaders(String[][] input) {
+        int maxValue = 0;
+        for (String[] array : input) {
+            int value = Integer.parseInt(array[0]);
+            if (value > maxValue) {
+                maxValue = value;
+            }
+        }
+        for (int i = 1; i <= maxValue; i++) {
+            System.out.print("level" + i + " " + "level" + i + " id" + " ");
+        }
     }
 
     private static void mappingTheParentNode(String node, List<String> path, String[][] input) {
         path.add(node);
         path.add(getId(input, node));
         makeItFormat(path);
-       // out.println(path);
+        // out.println(path);
         if (!map.containsKey(node)) {
             result.add(path.toArray(new String[0]));
             return;
@@ -59,6 +68,7 @@ class BuildCombination {
             mappingTheParentNode(next, newPath, input);
         }
     }
+
     private static void makeItFormat(List<String> path) {
         addEx.add(path);
 
@@ -71,6 +81,21 @@ class BuildCombination {
             }
         }
         return "";
+    }
+
+    private static void printLevels(List<List<String>> input, int level, int currentLevel) {
+        if (level == input.get(0).size()) {
+            return;
+        }
+        for (List<String> strings : input) {
+            for (int k = 0; k < strings.size(); k++) {
+                if (strings.size() > level) {
+                    System.out.print(strings.get(k) + "      ");
+                }
+            }
+            System.out.println();
+        }
+        printLevels(input, level + 2, currentLevel + 1);
     }
 }
 

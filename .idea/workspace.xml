@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf98ccbd-7990-409a-bcec-d5d84bbbbbe5" name="Changes" comment="remote">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/ExampleRun.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" afterDir="false" />
     </list>
@@ -76,8 +77,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HierarchyPrinter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.demo.run.HierarchyPrinter" />
+    <configuration name="ExampleRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.run.ExampleRun" />
       <module name="Demo" />
       <extension name="coverage">
         <pattern>
@@ -131,10 +132,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.com.example.BuildCombination" />
+        <item itemvalue="Application.ExampleRun" />
+        <item itemvalue="Application.com.demo.run.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.CombinationithId" />
-        <item itemvalue="Application.HierarchyPrinter" />
-        <item itemvalue="Application.com.demo.run.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676291028581</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="remote">
+      <created>1676302721364</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676302721364</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +244,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/demo/run/NewNaya.java</url>
           <line>41</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/demo/run/ExampleRun.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/demo/run/ExampleRun.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
