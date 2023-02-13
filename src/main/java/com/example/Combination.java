@@ -20,12 +20,12 @@ class BuildCombination {
                 {"2", "chassis", "bonut", "proc"},
                 {"3", "door", "window", "mfg"},
                 {"3", "door", "handle", "proc"},
-                {"4", "window", "glass", "proc"},
+                {"4", "window", "glass", "mfg"},
                 {"5", "tyre", "rubber", "proc"},
                 {"1", "car", "engine", "mfg"},
                 {"6", "engine", "nut", "mfg"},
                 {"7", "nut", "bolt", "mfg"},
-                {"8", "bolt", "bolts", "proc"}
+                {"8", "bolt", "bolts", "proc"},{"9", "glass", "glasssheet", "proc"},
         };
 
         for (String[] row : input) {
@@ -39,24 +39,24 @@ class BuildCombination {
 
         List<String> path = new ArrayList<>();
         mappingTheParentNode("car", path, input);
-        createHeaders(map);
+        createHeaders();
         System.out.println();
         printLevels();
     }
 
-    private static void createHeaders(Map<String, List<String>> map) {
+    private static void createHeaders() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Combination number");
+        stringBuilder.append("Combination number"+"\t  ");
         int maxValue = 0;
-        for (List<String> array : map.values()) {
+        for (List<String> array : addEx) {
             int value = array.size();
             if (value > maxValue) {
                 maxValue = value;
             }
         }
-        maxValue=maxValue+1;
+        maxValue=maxValue/2;
         for (int i = 1; i <= maxValue; i++) {
-            stringBuilder.append("level").append(i).append(" ").append("level").append(i).append(" id").append("  ");
+            stringBuilder.append("level").append(i).append("  ").append("level").append(i).append(" id").append("  ");
         }
         System.out.print(stringBuilder);
     }
@@ -91,26 +91,12 @@ class BuildCombination {
     }
 
     private static void printLevels() {
-        Map<Integer, Integer> maxLengths = new HashMap<>();
-        for (List<String> arr : addEx) {
-            for (int i = 0; i < arr.size(); i += 2) {
-                int index = i / 2 + 1;
-                maxLengths.put(index, Math.max(maxLengths.getOrDefault(index, 0), arr.get(i).length()));
-            }
-        }
         int count = 1;
         for (List<String> arr : addEx) {
-            System.out.print(count + "\t");
+            System.out.print("\t\t"+count + "\t\t\t");
             count++;
-            for (int i = 0; i < arr.size(); i += 2) {
-                int index = i / 2 + 1;
-                System.out.print(arr.get(i));
-                for (int j = 0; j < maxLengths.get(index) - arr.get(i).length(); j++) {
-                    System.out.print(" ");
-                }
-                System.out.print("\t");
-                System.out.print(arr.get(i + 1));
-                System.out.print("\t");
+            for (String s : arr) {
+                System.out.print("  "+s + "\t  ");
             }
             System.out.println();
         }

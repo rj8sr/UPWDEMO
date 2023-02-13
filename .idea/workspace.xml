@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf98ccbd-7990-409a-bcec-d5d84bbbbbe5" name="Changes" comment="remote">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/AlignElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/ArrayInTwoD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/run/AlignElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/AlignElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +78,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExampleRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.demo.run.ExampleRun" />
+    <configuration name="AlignElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.run.AlignElements" />
+      <module name="Demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.run.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArrayInTwoD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.demo.run.ArrayInTwoD" />
       <module name="Demo" />
       <extension name="coverage">
         <pattern>
@@ -92,19 +106,6 @@
     </configuration>
     <configuration name="Formatting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.run.Formatting" />
-      <module name="Demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.demo.run.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.demo.run.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.demo.run.Main" />
       <module name="Demo" />
       <extension name="coverage">
         <pattern>
@@ -132,10 +133,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.com.example.BuildCombination" />
+        <item itemvalue="Application.AlignElements" />
+        <item itemvalue="Application.ArrayInTwoD" />
         <item itemvalue="Application.AlignElement" />
         <item itemvalue="Application.Formatting" />
-        <item itemvalue="Application.ExampleRun" />
-        <item itemvalue="Application.com.demo.run.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -218,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676308455691</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="remote">
+      <created>1676310826186</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676310826186</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,11 +283,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/demo/run/ExampleRun.java</url>
           <line>20</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/Combination.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
