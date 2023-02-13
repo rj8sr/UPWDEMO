@@ -21,8 +21,11 @@ class BuildCombination {
                 {"3", "door", "window", "mfg"},
                 {"3", "door", "handle", "proc"},
                 {"4", "window", "glass", "proc"},
-                {"5", "tyre", "rubber", "proc"}
-
+                {"5", "tyre", "rubber", "proc"},
+                {"1", "car", "engine", "mfg"},
+                {"6", "engine", "nut", "mfg"},
+                {"7", "nut", "bolt", "mfg"},
+                {"8", "bolt", "bolts", "proc"}
         };
 
         for (String[] row : input) {
@@ -38,7 +41,7 @@ class BuildCombination {
         mappingTheParentNode("car", path, input);
         createHeaders(input);
         System.out.println();
-        printLevels(addEx, 0, 1);
+        printLevels();
     }
 
     private static void createHeaders(String[][] input) {
@@ -50,7 +53,7 @@ class BuildCombination {
             }
         }
         for (int i = 1; i <= maxValue; i++) {
-            System.out.print("level" + i + " " + "level" + i + " id" + " ");
+            System.out.print("level" + i + " " + "level" + i + " id" + "  ");
         }
     }
 
@@ -83,19 +86,27 @@ class BuildCombination {
         return "";
     }
 
-    private static void printLevels(List<List<String>> input, int level, int currentLevel) {
-        if (level == input.get(0).size()) {
-            return;
+    private static void printLevels() {
+        Map<Integer, Integer> maxLengths = new HashMap<>();
+        for (List<String> arr : addEx) {
+            for (int i = 0; i < arr.size(); i += 2) {
+                int index = i / 2 + 1;
+                maxLengths.put(index, Math.max(maxLengths.getOrDefault(index, 0), arr.get(i).length()));
+            }
         }
-        for (List<String> strings : input) {
-            for (int k = 0; k < strings.size(); k++) {
-                if (strings.size() > level) {
-                    System.out.print(strings.get(k) + "      ");
+        for (List<String> arr : addEx) {
+            for (int i = 0; i < arr.size(); i += 2) {
+                int index = i / 2 + 1;
+                System.out.print(arr.get(i));
+                for (int j = 0; j < maxLengths.get(index) - arr.get(i).length() + 1; j++) {
+                    System.out.print(" ");
                 }
+                System.out.print("\t");
+                System.out.print(arr.get(i + 1));
+                System.out.print("\t");
             }
             System.out.println();
         }
-        printLevels(input, level + 2, currentLevel + 1);
     }
 }
 
