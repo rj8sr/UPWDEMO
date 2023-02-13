@@ -2,6 +2,7 @@ package com.example;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,8 @@ class BuildCombination {
                 {"5", "tyre", "rubber", "proc"},
                 {"1", "car", "engine", "mfg"},
                 {"6", "engine", "nut", "mfg"},
-                {"7", "nut", "bolt", "proc"},
+                {"7", "nut", "bolt", "mfg"},
+                {"8", "bolt", "bolts", "proc"}
 
         };
 
@@ -37,11 +39,12 @@ class BuildCombination {
         }
 
         List<String> path = new ArrayList<>();
-        dfs("car", path);
+        mappingTheParentNode("car", path, input);
     }
 
-    private static void dfs(String node, List<String> path) {
+    private static void mappingTheParentNode(String node, List<String> path, String[][] input) {
         path.add(node);
+        path.add(getId(input, node));
         System.out.println(path);
         if (!map.containsKey(node)) {
             result.add(path.toArray(new String[0]));
@@ -49,8 +52,17 @@ class BuildCombination {
         }
         for (String next : map.get(node)) {
             List<String> newPath = new ArrayList<>(path);
-            dfs(next, newPath);
+            mappingTheParentNode(next, newPath, input);
         }
+    }
+
+    private static String getId(String[][] input, String item) {
+        for (String[] in : input) {
+            if (in[1].equals(item)) {
+                return in[0];
+            }
+        }
+        return "";
     }
 }
 
