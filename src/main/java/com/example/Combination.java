@@ -2,14 +2,16 @@ package com.example;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.System.out;
+
 class BuildCombination {
     static Map<String, List<String>> map = new HashMap<>();
     static List<String[]> result = new ArrayList<>();
+    public static final List<List<String>> addEx = new ArrayList<>();
 
     public static void main(String[] args) {
         String[][] input = {
@@ -40,12 +42,14 @@ class BuildCombination {
 
         List<String> path = new ArrayList<>();
         mappingTheParentNode("car", path, input);
+        out.println(addEx);
     }
 
     private static void mappingTheParentNode(String node, List<String> path, String[][] input) {
         path.add(node);
         path.add(getId(input, node));
-        System.out.println(path);
+        makeItFormat(path);
+       // out.println(path);
         if (!map.containsKey(node)) {
             result.add(path.toArray(new String[0]));
             return;
@@ -54,6 +58,10 @@ class BuildCombination {
             List<String> newPath = new ArrayList<>(path);
             mappingTheParentNode(next, newPath, input);
         }
+    }
+    private static void makeItFormat(List<String> path) {
+        addEx.add(path);
+
     }
 
     private static String getId(String[][] input, String item) {

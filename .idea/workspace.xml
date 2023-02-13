@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf98ccbd-7990-409a-bcec-d5d84bbbbbe5" name="Changes" comment="remote">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/NewNaya.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/run/NewRUn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Combination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/HitRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/HitRun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +63,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.com.example.BuildCombination">
+    <configuration name="CombinationithId" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.CombinationithId" />
+      <module name="Demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HierarchyPrinter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.demo.run.HierarchyPrinter" />
       <module name="Demo" />
@@ -85,19 +95,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewRUn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.demo.run.NewRUn" />
-      <module name="Demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.demo.run.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,10 +131,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.com.example.BuildCombination" />
-        <item itemvalue="Application.com.demo.run.Main" />
-        <item itemvalue="Application.HierarchyPrinter" />
-        <item itemvalue="Application.NewRUn" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.CombinationithId" />
+        <item itemvalue="Application.HierarchyPrinter" />
+        <item itemvalue="Application.com.demo.run.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676224383916</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remote">
+      <created>1676291028581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676291028581</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +223,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remote" />
     <option name="LAST_COMMIT_MESSAGE" value="remote" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
