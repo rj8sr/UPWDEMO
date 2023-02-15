@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
-workspace.xml
+.idea/workspace.xml
+.idea/*
 # Log file
 *.log
 
