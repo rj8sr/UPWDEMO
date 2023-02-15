@@ -23,7 +23,7 @@ class BuildCombination {
                 {"3", "door", "handle", "proc"},
                 {"4", "window", "glass", "proc"},
                 {"5", "tyre", "rubber", "proc"},
-                };
+        };
 
         for (String[] row : input) {
             if (row[3].equals("mfg")) {
@@ -39,11 +39,12 @@ class BuildCombination {
         createHeaders();
         out.println();
         printLevels();
+        extractedGrouping(addEx.size());
     }
 
     private static void createHeaders() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Combination number"+"\t  ");
+        stringBuilder.append("Combination number" + "\t  ");
         int maxValue = 0;
         for (List<String> array : addEx) {
             int value = array.size();
@@ -51,7 +52,7 @@ class BuildCombination {
                 maxValue = value;
             }
         }
-        maxValue=maxValue/2;
+        maxValue = maxValue / 2;
         for (int i = 1; i <= maxValue; i++) {
             stringBuilder.append("level").append(i).append("  ").append("level").append(i).append(" id").append("  ");
         }
@@ -89,19 +90,24 @@ class BuildCombination {
     private static void printLevels() {
         int count = 1;
         for (List<String> arr : addEx) {
-            out.print("\t\t"+count + "\t\t\t");
+            out.print("\t\t" + count + "\t\t\t");
             count++;
             for (String s : arr) {
-                out.print("  "+s + "\t  ");
+                out.print("  " + s + "\t  ");
             }
             out.println();
         }
-        for (int i = 0; i < addEx.size(); i++) {
-            out.print("\t\t"+count + "\t\t\t");
+    }
+
+    private static void extractedGrouping(int count) {
+        for (int i = 1; i < addEx.size(); i++) {
+            out.print("\t\t" + count + "\t\t\t");
             for (String s : addEx.get(i)) {
-                out.print("  "+s + "\t  ");
+                out.print("  " + s + "\t  ");
             }
-            out.println();
+            out.print("\n\t\t" + count + "\t\t\t");
+            out.println("  " + addEx.get(addEx.size() - 1) + "\t  ");
+            count++;
         }
     }
 }
