@@ -16,6 +16,7 @@ class BuildCombination {
         String[][] input = {
                 {"1", "car", "chassis", "mfg"},
                 {"1", "car", "tyre", "mfg"},
+                {"1", "car", "seat", "mfg"},
                 {"2", "chassis", "door", "mfg"},
                 {"2", "chassis", "trunk", "proc"},
                 {"2", "chassis", "bonut", "proc"},
@@ -23,6 +24,8 @@ class BuildCombination {
                 {"3", "door", "handle", "proc"},
                 {"4", "window", "glass", "proc"},
                 {"5", "tyre", "rubber", "proc"},
+                {"6", "seat", "chair", "proc"},
+
         };
 
         for (String[] row : input) {
@@ -35,7 +38,7 @@ class BuildCombination {
         }
 
         List<String> path = new ArrayList<>();
-        mappingTheParentNode("car", path, input);
+        mappingTheParentNode(map.entrySet().stream().iterator().next().getKey(), path, input);
         createHeaders();
         out.println();
         printLevels();
@@ -63,7 +66,7 @@ class BuildCombination {
         path.add(node);
         path.add(getId(input, node));
         makeItFormat(path);
-        // out.println(path);
+        out.println(path);
         if (!map.containsKey(node)) {
             result.add(path.toArray(new String[0]));
             return;
@@ -90,24 +93,31 @@ class BuildCombination {
     private static void printLevels() {
         int count = 1;
         for (List<String> arr : addEx) {
-            out.print("\t\t" + count + "\t\t\t");
-            count++;
-            for (String s : arr) {
-                out.print("  " + s + "\t  ");
+            if (count < addEx.size()) {
+                out.print("\t\t" + count + "\t\t\t");
+                count++;
+                for (String s : arr) {
+                    out.print("  " + s + "\t  ");
+                }
+
+                out.println();
             }
-            out.println();
         }
     }
 
     private static void extractedGrouping(int count) {
-        for (int i = 1; i < addEx.size(); i++) {
+        for (int i = 0; i < addEx.size() - 1; i++) {
             out.print("\t\t" + count + "\t\t\t");
             for (String s : addEx.get(i)) {
                 out.print("  " + s + "\t  ");
             }
+            List<String> mapForLastDetailValue = addEx.get(addEx.size()-1);
             out.print("\n\t\t" + count + "\t\t\t");
-            out.println("  " + addEx.get(addEx.size() - 1) + "\t  ");
+            for (String string : mapForLastDetailValue) {
+                out.print("  " + string + "\t  ");
+            }
             count++;
+            out.println();
         }
     }
 }
