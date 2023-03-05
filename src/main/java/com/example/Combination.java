@@ -11,20 +11,10 @@ class BuildCombination {
     static LinkedHashMap<String, List<String>> map = new LinkedHashMap<>();
     static List<String[]> result = new ArrayList<>();
     public static final List<List<String>> addEx = new ArrayList<>();
+    public static final List<List<String>> addElementsOnLevel = new ArrayList<>();
 
     public static void main(String[] args) {
-        String[][] input = {
-                {"1", "car", "chassis", "mfg"},
-                {"1", "car", "tyre", "mfg"},
-                {"1", "car", "seat", "mfg"},
-                {"2", "chassis", "door", "mfg"},
-                {"2", "chassis", "trunk", "proc"},
-                {"2", "chassis", "bonut", "proc"},
-                {"3", "door", "window", "mfg"},
-                {"3", "door", "handle", "proc"},
-                {"4", "window", "glass", "proc"},
-                {"5", "tyre", "rubber", "proc"},
-                {"6", "seat", "chair", "proc"},
+        String[][] input = {{"1", "car", "chassis", "mfg"}, {"1", "car", "tyre", "mfg"}, {"1", "car", "seat", "mfg"}, {"2", "chassis", "door", "mfg"}, {"2", "chassis", "trunk", "proc"}, {"2", "chassis", "bonut", "proc"}, {"3", "door", "window", "mfg"}, {"3", "door", "handle", "proc"}, {"4", "window", "glass", "proc"}, {"5", "tyre", "rubber", "proc"}, {"6", "seat", "chair", "proc"},
 
         };
 
@@ -66,7 +56,7 @@ class BuildCombination {
         path.add(node);
         path.add(getId(input, node));
         makeItFormat(path);
-        out.println(path);
+//        out.println(path);
         if (!map.containsKey(node)) {
             result.add(path.toArray(new String[0]));
             return;
@@ -93,31 +83,40 @@ class BuildCombination {
     private static void printLevels() {
         int count = 1;
         for (List<String> arr : addEx) {
-            if (count < addEx.size()) {
-                out.print("\t\t" + count + "\t\t\t");
-                count++;
-                for (String s : arr) {
-                    out.print("  " + s + "\t  ");
-                }
-
-                out.println();
+            out.print("\t\t" + count + "\t\t\t");
+            count++;
+            for (String s : arr) {
+                out.print("  " + s + "\t  ");
             }
+
+            out.println();
         }
     }
 
     private static void extractedGrouping(int count) {
-        for (int i = 0; i < addEx.size() - 1; i++) {
-            out.print("\t\t" + count + "\t\t\t");
-            for (String s : addEx.get(i)) {
-                out.print("  " + s + "\t  ");
+        for (List<String> ex : addEx) {
+            if (ex.size() > 2 && ex.size() < 5) {
+                addElementsOnLevel.add(ex);
             }
-            List<String> mapForLastDetailValue = addEx.get(addEx.size()-1);
-            out.print("\n\t\t" + count + "\t\t\t");
-            for (String string : mapForLastDetailValue) {
-                out.print("  " + string + "\t  ");
+        }
+
+        for (List<String> s : addElementsOnLevel) {
+            out.print("\t\t" + ++count + "\t\t\t");
+            for (String value : s) {
+                out.print("  " + value + "\t  ");
             }
-            count++;
             out.println();
+            for (List<String> ex : addEx) {
+                if (ex.size() > 2) {
+                    out.print("\t\t" + count + "\t\t\t");
+                    for (String moreValues : ex) {
+                        out.print("  " + moreValues + "\t  ");
+                    }
+                    count++;
+                    out.println();
+                }
+            }
+
         }
     }
 }
